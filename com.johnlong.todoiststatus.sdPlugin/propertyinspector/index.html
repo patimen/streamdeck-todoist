@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name=viewport
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>johnlong.streamdeck.todoiststatus Property Inspector</title>
+    <link rel="stylesheet" href="css/sdpi.css">
+</head>
+<body>
+<div class="sdpi-wrapper">
+
+    <!-- DROP HTML-STUFF BELOW -->
+
+    <!--
+      Here we just copied a couple of elements from the PISamples example, which contains
+      a huge collection pre-made HTML-elements for you to use.
+      Importoant here is (if you plan to communicate from the Property Inspector to the plugin without
+      further programming), that you add an 'id' to an element's control.
+      This will get the 'key', which is sent to the plugin (or settings), along with the value of
+      the control.
+    -->
+    <div class="sdpi-item" id="name">
+        <div class="sdpi-item-label">Name</div>
+        <input class="sdpi-item-value" type="text" id="item_name">
+    </div>
+    <div class="sdpi-item" id="filter">
+        <div class="sdpi-item-label">Filter</div>
+        <input class="sdpi-item-value" type="text" id="item_filter">
+    </div>
+    <div class="sdpi-item">
+        <div class="sdpi-item-label">API Token</div>
+        <input id="apiToken" class="sdpi-item-value" type="password" value=""/>
+    </div>
+    <div class="sdpi-heading">Color Cutoffs</div>
+    <div type="radio" class="sdpi-item" id="adjust_radio">
+        <div class="sdpi-item-label">Higher is</div>
+        <div class="sdpi-item-value ">
+        <span class="sdpi-item-child">
+            <input id="bad_selected" type="radio" name="rdio" value="bad" onclick="showAsBad()">
+            <label for="bad_selected" class="sdpi-item-label"><span></span>Bad</label>
+        </span>
+            <span class="sdpi-item-child">
+            <input id="good_selected" type="radio" value="good" name="rdio" onclick="showAsGood()">
+            <label for="good_selected" class="sdpi-item-label"><span></span>Good</label>
+        </span>
+        </div>
+    </div>
+    <div id="color_settings_good" hidden>
+        <div class="sdpi-item" id="g_level1group">
+            <div class="sdpi-item-label" id="g_level1label">value >=</div>
+            <input class="sdpi-item-value" inputmode="numeric" type="number" id="g_cutoff_1">
+            <input type="color" class="sdpi-item-value" id="g_color_1" value="#008000">
+        </div>
+        <div class="sdpi-item" id="g_level2group">
+            <div class="sdpi-item-label" id="g_level2label">value >=</div>
+            <input class="sdpi-item-value" inputmode="numeric" type="number" id="g_cutoff_2">
+            <input type="color" class="sdpi-item-value" id="g_color_2" value="#FFFF00">
+        </div>
+        <div class="sdpi-item" id="g_level3group">
+            <div class="sdpi-item-label" id="g_level3label">value >=</div>
+            <input class="sdpi-item-value" inputmode="numeric" type="number" id="g_cutoff_3">
+            <input type="color" class="sdpi-item-value" id="g_color_3" value="#ffa500">
+        </div>
+        <div class="sdpi-item" id="g_level4group">
+            <div class="sdpi-item-label" id="g_level4label">else</div>
+            <input type="color" class="sdpi-item-value" id="g_color_4" value="#FF0000">
+        </div>
+    </div>
+    <div id="color_settings_bad" hidden>
+        <div class="sdpi-item" id="b_level1group">
+            <div class="sdpi-item-label" id="b_level1label">value >=</div>
+            <input class="sdpi-item-value" inputmode="numeric" type="number" id="b_cutoff_1">
+            <input type="color" class="sdpi-item-value" id="b_color_1" value="#FF0000">
+        </div>
+        <div class="sdpi-item" id="b_level2group">
+            <div class="sdpi-item-label" id="b_level2label">value >=</div>
+            <input class="sdpi-item-value" inputmode="numeric" type="number" id="b_cutoff_2">
+            <input type="color" class="sdpi-item-value" id="b_color_2" value="#ffa500">
+        </div>
+        <div class="sdpi-item" id="b_level3group">
+            <div class="sdpi-item-label" id="b_level3label">value >=</div>
+            <input class="sdpi-item-value" inputmode="numeric" type="number" id="b_cutoff_3">
+            <input type="color" class="sdpi-item-value" id="b_color_3" value="#FFFF00">
+        </div>
+        <div class="sdpi-item" id="b_level4group">
+            <div class="sdpi-item-label" id="b_level4label">else</div>
+            <input type="color" class="sdpi-item-value" id="b_color_4" value="#008000">
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="sdpi-info-label hidden" style="top: -1000;" value=""></div>
+<script src="js/common.js"></script>
+<script src="js/common_pi.js"></script>
+<script src="js/index_pi.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+	"Name": "Todoist Status",
+	"Version": "0.1.0",
+	"Author": "JohnLong",
+	"Actions": [
+		{
+			"Name": "Todoist Counts",
+			"UUID": "com.johnlong.todoiststatus.counts",
+			"Icon": "imgs/actions/monitor/todoist_1",
+			"Tooltip": "Displays Todoist task counts",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/monitor/todoist-icon",
+					"TitleAlignment": "middle"
+				}
+			],
+			"PropertyInspectorPath": "propertyinspector/index.html"
+		}
+	],
+	"Category": "Status Deck",
+	"CategoryIcon": "imgs/plugin/statusboard",
+	"CodePath": "bin/plugin.js",
+	"Description": "Shows a count of tasks for a Todoist search, and optionally color codes based on the count",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.4"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.15"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"UUID": "com.johnlong.todoiststatus"
+}
